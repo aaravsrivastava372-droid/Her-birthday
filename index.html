@@ -2,101 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday 🤍</title>
+  <title>For You 🤍</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #ffe6f0, #ffffff);
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      font-family: 'Georgia', serif;
-      overflow: hidden;
-    }
-
-    h1 {
-      color: #d63384;
-      margin-bottom: 30px;
-      text-align: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffe6f0, #e6f0ff);
+      font-family: Arial, sans-serif;
     }
 
     .envelopes {
       display: flex;
-      gap: 30px;
+      gap: 20px;
     }
 
     .envelope {
-      width: 120px;
-      height: 80px;
-      background: #ffb6c1;
-      position: relative;
-      cursor: pointer;
-      animation: bounce 2s infinite;
-      border-radius: 6px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      text-decoration: none;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      animation: float 3s ease-in-out infinite;
+      color: #ff4d88;
+      font-weight: bold;
     }
 
-    .envelope::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 0;
-      border-left: 60px solid transparent;
-      border-right: 60px solid transparent;
-      border-top: 40px solid #ff8fab;
-    }
+    .envelope:nth-child(2) { animation-delay: 0.5s; }
+    .envelope:nth-child(3) { animation-delay: 1s; }
 
-    .envelope span {
-      position: absolute;
-      bottom: -30px;
-      width: 100%;
-      text-align: center;
-      color: #c9184a;
-      font-size: 14px;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
+    @keyframes float {
+      0% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <h1>Choose one letter 💌</h1>
-
   <div class="envelopes">
-    <div class="envelope" onclick="openLetter(1)">
-      <span>Letter One</span>
-    </div>
-    <div class="envelope" onclick="openLetter(2)">
-      <span>Letter Two</span>
-    </div>
-    <div class="envelope" onclick="openLetter(3)">
-      <span>Letter Three</span>
-    </div>
+    <a class="envelope" href="letter1.html">Letter One 💌</a>
+    <a class="envelope" href="#" onclick="alert('Letter 2 coming soon 🤍')">Letter Two ✨</a>
+    <a class="envelope" href="#" onclick="alert('Letter 3 coming soon 🤍')">Letter Three 🌸</a>
   </div>
-
-  <div class="envelopes">
-
-  <a class="envelope" href="letter1.html">
-    <span>Letter One</span>
-  </a>
-
-  <a class="envelope" href="letter2.html">
-    <span>Letter Two</span>
-  </a>
-
-  <a class="envelope" href="letter3.html">
-    <span>Letter Three</span>
-  </a>
-
-  </div>
-  
 
 </body>
 </html>

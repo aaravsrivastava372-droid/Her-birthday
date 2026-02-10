@@ -1,52 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For You 🤍</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ffe6f0, #e6f0ff);
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Your Letters 💌</title>
 
-    .envelopes {
-      display: flex;
-      gap: 20px;
-    }
+<style>
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    overflow:hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ffd6e7,#e6f0ff);
+}
 
-    .envelope {
-      text-decoration: none;
-      background: white;
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      animation: float 3s ease-in-out infinite;
-      color: #ff4d88;
-      font-weight: bold;
-    }
+/* Title */
+h1{
+    text-align:center;
+    color:#ff4d88;
+    margin-top:30px;
+}
 
-    .envelope:nth-child(2) { animation-delay: 0.5s; }
-    .envelope:nth-child(3) { animation-delay: 1s; }
+/* Envelope container */
+.container{
+    position:relative;
+    width:100%;
+    height:85vh;
+}
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0); }
-    }
-  </style>
+/* Envelope style */
+.envelope{
+    position:absolute;
+    width:120px;
+    cursor:pointer;
+    animation: float 6s infinite ease-in-out;
+    transition:0.3s;
+}
+
+.envelope:hover{
+    transform:scale(1.15);
+}
+
+/* Floating animation */
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-25px);}
+    100%{transform:translateY(0);}
+}
+
+/* Positions */
+.e1{ top:40%; left:20%; }
+.e2{ top:25%; left:45%; }
+.e3{ top:55%; left:70%; }
+
+.note{
+    text-align:center;
+    color:#555;
+    margin-top:5px;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="envelopes">
-    <a class="envelope" href="letter1.html">Letter One 💌</a>
-    <a class="envelope" href="#" onclick="alert('Letter 2 coming soon 🤍')">Letter Two ✨</a>
-    <a class="envelope" href="#" onclick="alert('Letter 3 coming soon 🤍')">Letter Three 🌸</a>
-  </div>
+<h1>Tap an envelope, Akshara 💗</h1>
+<div class="note">Each one has something for you</div>
+
+<div class="container">
+
+<!-- Envelope 1 -->
+<a href="letter1.html">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="envelope e1">
+</a>
+
+<!-- Envelope 2 -->
+<a href="letter2.html">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="envelope e2">
+</a>
+
+<!-- Envelope 3 -->
+<a href="letter3.html">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="envelope e3">
+</a>
+
+</div>
 
 </body>
 </html>
